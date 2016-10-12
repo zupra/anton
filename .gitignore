@@ -1,0 +1,6 @@
+node_modules/
+app/
+.DS_Store
+error_1.mp3
+error_2.mp3
+gulpfile.js
