@@ -28,14 +28,14 @@
 
   Array.prototype.forEach.call(numberS, function(el) {
     el.oninput = function() {
-      var number1 = numberS[0].value,
-          number2 = numberS[1].value;
+			var number1 = parseFloat(numberS[0].value),
+					number2 = parseFloat(numberS[1].value);
 
-      //TODO reversed
+      ////TODO reversed
       if (number1 > number2) {
-        var tmp = number2;
-        number2 = number1;
-        number1 = tmp;
+        var tmp = number1;
+        numberS[0].value = number2;
+        numberS[1].value = tmp;
       }
 
       rangeS[0].value = number1;
