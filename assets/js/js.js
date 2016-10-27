@@ -1,7 +1,7 @@
 (function() {
   var parent = document.querySelector(".range-slider");
   // если нет выходим
-  if(parent == null) return;
+  if(!parent) return;
 
   var
     rangeS = parent.querySelectorAll("input[type=range]"),
@@ -9,10 +9,11 @@
 
     //function reversed(a,b) {};
 
-  Array.prototype.forEach.call(rangeS, function(el) {
+  // у коллекции есть forEach
+  rangeS.forEach(function(el) {
     el.oninput = function() {
       var slide1 = parseFloat(rangeS[0].value),
-          slide2 = parseFloat(rangeS[1].value);
+        slide2 = parseFloat(rangeS[1].value);
 
       //TODO reversed
       if (slide1 > slide2) {
@@ -26,7 +27,7 @@
     }
   });
 
-  Array.prototype.forEach.call(numberS, function(el) {
+  numberS.forEach(function(el) {
     el.oninput = function() {
 			var number1 = parseFloat(numberS[0].value),
 					number2 = parseFloat(numberS[1].value);
@@ -43,6 +44,7 @@
 
     }
   });
+
 })();
 
 
