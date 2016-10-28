@@ -87,7 +87,7 @@
 
 	var box = document.querySelector('.slides');
   // если слайдера нет - выходим
-  if(box == null) return;
+  if(!box) return;
 
 
 	var slides = box.querySelectorAll('img');
