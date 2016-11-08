@@ -1,3 +1,4 @@
+//RANGE-SLIDER
 (function() {
   var parent = document.querySelector(".range-slider");
   // если нет выходим
@@ -82,7 +83,7 @@
 
 
 
-//==========SLIDER
+//SLIDER
 (function(){
 
 	var box = document.querySelector('.slides');
@@ -148,6 +149,26 @@
 	prev.onclick = function() {
 		goToSlide(currentSlide - 1)
 	};
+
+})();
+
+
+
+//EXPANDER
+(function(){
+  var trigger = document.querySelectorAll('.exp_trigger');
+  if(!trigger) return;
+
+  trigger.onclick = function(e) {
+    //if ( this == e.currentTarget ) alert ('!')
+    var content = this.parentNode.querySelector('.exp_content')
+    this.classList.toggle('open');
+    content.classList.toggle('open');
+	};
+
+  //trigger.addEventListener("click", expanderToggle);
+  //function expanderToggle(e) {};
+
 
 })();
 
