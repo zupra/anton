@@ -154,20 +154,22 @@
 
 
 
-//EXPANDER
+//
 (function(){
-  var trigger = document.querySelectorAll('.exp_trigger');
-  if(!trigger) return;
 
-  trigger.onclick = function(e) {
-    //if ( this == e.currentTarget ) alert ('!')
-    var content = this.parentNode.querySelector('.exp_content')
-    this.classList.toggle('open');
+  // expander
+  document.addEventListener("click", expanderToggle);
+  function expanderToggle(e) {
+    if ( !e.target.className == 'exp_trigger' ) return;
+    var trigger = e.target;
+    trigger.parentNode.classList.toggle('open');
+    /*
+    var = content = trigger.parentNode.querySelector('.exp_content');
+    trigger.classList.toggle('open');
     content.classList.toggle('open');
-	};
+    */
 
-  //trigger.addEventListener("click", expanderToggle);
-  //function expanderToggle(e) {};
+  };
 
 
 })();
