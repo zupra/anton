@@ -157,13 +157,23 @@
 //
 (function(){
 
-  // expander
+  function hasClass(el, className) {
+    return (el.classList) ? el.classList.contains(className) : new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+  }
+
+
   document.addEventListener("click", expanderToggle);
+
   function expanderToggle(e) {
-    if ( !e.target.className == 'exp_trigger' ) return;
+    if ( hasClass(e.target, 'exp_trigger') ) {
+      e.target.parentNode.classList.toggle('open');
+    }
+
+    /*
+    if ( !e.target.className === 'exp_trigger' ) return;
     var trigger = e.target;
     trigger.parentNode.classList.toggle('open');
-    /*
+    
     var = content = trigger.parentNode.querySelector('.exp_content');
     trigger.classList.toggle('open');
     content.classList.toggle('open');
